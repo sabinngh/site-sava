@@ -74,7 +74,7 @@ function AdminClubs() {
           editRequestsResponse,
         ] = await Promise.all([
           fetch(
-            `${API_URL}/api/club/requests`,
+            `${API_URL}/api/clubs/requests`,
             {
               credentials: "include",
             }
