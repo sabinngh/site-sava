@@ -142,7 +142,7 @@ function AdminClubs() {
 
     try {
       const response = await fetch(
-        `${API_URL}/api/requests/${requestId}/approve`,
+        `${API_URL}/api/clubs/requests/${requestId}/approve`,
         {
           method: "POST",
           credentials: "include",
