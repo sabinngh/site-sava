@@ -1,0 +1,424 @@
+.club-edit-page {
+  min-height: 100vh;
+  padding: 55px 20px 100px;
+  background: #f5f8fc;
+  color: #06254a;
+}
+
+.club-edit-container {
+  width: min(980px, 100%);
+  margin: 0 auto;
+}
+
+.club-edit-back {
+  margin-bottom: 35px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #2563eb;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.club-edit-back:hover {
+  text-decoration: underline;
+}
+
+
+/* HEADER */
+
+.club-edit-header {
+  margin-bottom: 35px;
+}
+
+.club-edit-header > span {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.club-edit-header h1 {
+  margin: 10px 0 12px;
+
+  font-size: clamp(32px, 5vw, 46px);
+}
+
+.club-edit-header p {
+  max-width: 680px;
+  margin: 0;
+
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* FORM */
+
+.club-edit-section {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 36px;
+
+  background: #ffffff;
+  border: 1px solid #dbe5f1;
+  border-radius: 20px;
+}
+
+.club-edit-section-header {
+  margin-bottom: 28px;
+}
+
+.club-edit-section-header span {
+  display: block;
+
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.club-edit-section-header h2 {
+  margin: 6px 0 0;
+
+  color: #06254a;
+  font-size: 23px;
+}
+
+
+/* fiecare câmp stă pe rândul lui */
+
+.club-edit-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.club-edit-group:last-child {
+  margin-bottom: 0;
+}
+
+.club-edit-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #06254a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.club-edit-group input,
+.club-edit-group textarea {
+  display: block;
+
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+
+  padding: 14px 15px;
+
+  background: #ffffff;
+  color: #06254a;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.club-edit-group input {
+  min-height: 48px;
+}
+
+.club-edit-group textarea {
+  min-height: 220px;
+  resize: vertical;
+
+  line-height: 1.7;
+}
+
+.club-edit-group input:focus,
+.club-edit-group textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.club-edit-group small {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+
+/* doar acolo unde vrem două coloane */
+
+.club-edit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  width: 100%;
+  gap: 20px;
+}
+
+.club-edit-grid .club-edit-group {
+  margin-bottom: 0;
+}
+
+.club-edit-form {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  gap: 24px;
+}
+
+.club-edit-form * {
+  box-sizing: border-box;
+}
+
+
+/* COVER */
+
+.club-cover-edit {
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 600px;
+
+  margin-bottom: 20px;
+
+  border-radius: 14px;
+}
+
+.club-cover-edit img {
+  display: block;
+
+  width: 100%;
+  max-height: 360px;
+
+  object-fit: cover;
+}
+
+.club-edit-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 280px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.club-image-selector {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 18px;
+
+  background: #eef4ff;
+  color: #2563eb;
+
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.club-image-selector:hover {
+  background: #dbeafe;
+}
+
+.club-image-selector input {
+  display: none;
+}
+
+.club-selected-file {
+  margin: 12px 0 0;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+/* REQUESTER */
+
+.club-requester-description {
+  max-width: 620px;
+
+  margin: -10px 0 28px;
+
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.club-requester-description + .club-edit-group {
+  margin-bottom: 24px;
+}
+
+
+/* MESSAGES */
+
+.club-edit-error,
+.club-edit-success {
+  margin: 0;
+  padding: 15px 18px;
+
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.club-edit-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+}
+
+.club-edit-success {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+}
+
+
+/* ACTIONS */
+
+.club-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  margin-top: 5px;
+}
+
+.club-edit-actions button {
+  padding: 13px 20px;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.club-edit-cancel {
+  background: #ffffff;
+  color: #475569;
+
+  border: 1px solid #cbd5e1;
+}
+
+.club-edit-cancel:hover {
+  background: #f8fafc;
+}
+
+.club-edit-submit {
+  background: #2563eb;
+  color: #ffffff;
+
+  border: 1px solid #2563eb;
+}
+
+.club-edit-submit:hover {
+  background: #1d4ed8;
+}
+
+.club-edit-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .club-edit-page {
+    padding: 40px 16px 70px;
+  }
+
+  .club-edit-section {
+    padding: 22px;
+  }
+
+  .club-edit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .club-edit-actions {
+    flex-direction: column-reverse;
+  }
+
+  .club-edit-actions button {
+    width: 100%;
+  }
+}
+
+.club-edit-group textarea.club-edit-reason {
+  min-height: 120px;
+}
+
+.club-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 4px;
+  padding-top: 8px;
+}
+
+.club-edit-actions button {
+  min-height: 46px;
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.club-edit-submit:hover:not(:disabled) {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: translateY(-1px);
+}

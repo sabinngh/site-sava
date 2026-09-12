@@ -1,0 +1,443 @@
+.club-registration-page {
+  min-height: 100vh;
+  padding: 60px 20px 100px;
+
+  background: #f5f8fc;
+  color: #06254a;
+}
+
+.club-registration-container {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+
+/* BACK */
+
+.club-registration-back {
+  margin-bottom: 40px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #2563eb;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.club-registration-back:hover {
+  text-decoration: underline;
+}
+
+
+/* HEADER */
+
+.club-registration-header {
+  margin-bottom: 45px;
+}
+
+.club-registration-header > span {
+  color: #2563eb;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.club-registration-header h1 {
+  margin: 10px 0 14px;
+
+  font-size: clamp(36px, 6vw, 52px);
+  line-height: 1.1;
+}
+
+.club-registration-header p {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* FORM */
+
+.club-registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+
+/* SECTIONS */
+
+.registration-section {
+  padding: 32px;
+
+  background: #ffffff;
+
+  border: 1px solid #dbe5f1;
+  border-radius: 20px;
+}
+
+.registration-section-heading {
+  display: flex;
+  gap: 18px;
+
+  margin-bottom: 30px;
+}
+
+.registration-section-heading > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
+
+  background: #eef4ff;
+  color: #2563eb;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.registration-section-heading h2 {
+  margin: 0 0 5px;
+
+  font-size: 22px;
+}
+
+.registration-section-heading p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* FIELDS */
+
+.registration-fields {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+.registration-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.registration-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.registration-field label {
+  color: #0f2745;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.registration-field input,
+.registration-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 13px 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+
+  color: #0f2745;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.registration-field textarea {
+  resize: vertical;
+  min-height: 170px;
+
+  line-height: 1.65;
+}
+
+.registration-field input:focus,
+.registration-field textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.registration-field small {
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+
+/* FILE UPLOAD */
+
+.club-cover-upload > input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.club-cover-upload-button {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 22px;
+
+  border: 2px dashed #cbd5e1;
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.club-cover-upload-button:hover {
+  background: #f8fbff;
+  border-color: #2563eb;
+}
+
+.upload-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border-radius: 12px;
+
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.club-cover-upload-button > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.club-cover-upload-button strong {
+  font-size: 15px;
+}
+
+.club-cover-upload-button small {
+  color: #94a3b8;
+}
+
+
+/* PREVIEW */
+
+.club-cover-preview {
+  margin-top: 24px;
+}
+
+.club-cover-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+.club-cover-preview-header > span {
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.club-cover-preview-header button {
+  border: none;
+  background: transparent;
+
+  color: #dc2626;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.club-cover-preview img {
+  display: block;
+
+  width: 100%;
+  max-height: 420px;
+
+  object-fit: cover;
+
+  border-radius: 14px;
+}
+
+
+/* ERROR */
+
+.registration-error {
+  margin: 0;
+
+  padding: 16px 18px;
+
+  background: #fef2f2;
+  color: #b91c1c;
+
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+
+  font-weight: 600;
+}
+
+
+/* SUCCESS */
+
+.registration-success {
+  padding: 20px;
+
+  background: #f0fdf4;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
+}
+
+.registration-success strong {
+  color: #15803d;
+}
+
+.registration-success p {
+  margin: 6px 0 0;
+
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+
+/* ACTIONS */
+
+.registration-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  padding-top: 10px;
+}
+
+.registration-actions button {
+  padding: 13px 22px;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.registration-cancel {
+  background: #ffffff;
+  color: #475569;
+
+  border: 1px solid #cbd5e1;
+}
+
+.registration-submit {
+  background: #2563eb;
+  color: #ffffff;
+
+  border: 1px solid #2563eb;
+}
+
+.registration-submit:hover {
+  background: #1d4ed8;
+}
+
+.registration-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .club-registration-page {
+    padding:
+      40px 16px
+      70px;
+  }
+
+  .registration-section {
+    padding: 22px 18px;
+  }
+
+  .registration-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-field.full-width {
+    grid-column: auto;
+  }
+
+  .registration-actions {
+    flex-direction: column-reverse;
+  }
+
+  .registration-actions button {
+    width: 100%;
+  }
+
+}

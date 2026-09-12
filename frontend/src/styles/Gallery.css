@@ -1,0 +1,315 @@
+.gallery-page {
+  min-height: 100vh;
+
+  padding-bottom: 100px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f5faff 0%,
+      #ffffff 500px
+    );
+}
+
+
+/* HERO */
+
+.gallery-hero {
+  width: calc(100% - 48px);
+  max-width: 1100px;
+
+  margin: 0 auto;
+  padding: 80px 0 55px;
+}
+
+.gallery-hero > span {
+  color: #2563eb;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.gallery-hero h1 {
+  max-width: 700px;
+
+  margin: 12px 0 18px;
+
+  color: #0f2a44;
+
+  font-size: clamp(42px, 6vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.gallery-hero h1 strong {
+  color: #2563eb;
+}
+
+.gallery-hero p {
+  max-width: 570px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* GALLERY */
+
+.public-gallery {
+  width: calc(100% - 48px);
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.public-gallery-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* IMAGE */
+
+.public-gallery-item {
+  position: relative;
+
+  height: 340px;
+
+  overflow: hidden;
+
+  background: #e2e8f0;
+
+  border-radius: 16px;
+
+  cursor: pointer;
+}
+
+.public-gallery-item img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.public-gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+
+/* OVERLAY */
+
+.public-gallery-overlay {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 60px 20px 18px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(8, 30, 55, 0.85)
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+.public-gallery-item:hover
+.public-gallery-overlay {
+  opacity: 1;
+}
+
+.public-gallery-overlay h2 {
+  margin: 0 0 4px;
+
+  font-size: 16px;
+}
+
+.public-gallery-overlay time {
+  font-size: 12px;
+
+  opacity: 0.8;
+}
+
+
+/* STATUS */
+
+.gallery-status {
+  padding: 60px;
+
+  color: #64748b;
+
+  text-align: center;
+}
+
+.gallery-status h2 {
+  color: #0f2a44;
+}
+
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  .public-gallery-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+  .gallery-hero {
+    width: calc(100% - 32px);
+
+    padding: 55px 0 40px;
+  }
+
+  .gallery-hero h1 {
+    font-size: 40px;
+  }
+
+  .public-gallery {
+    width: calc(100% - 32px);
+  }
+
+  .public-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .public-gallery-item {
+    height: 300px;
+  }
+
+  /*
+   * Pe telefon nu avem hover,
+   * deci informația rămâne vizibilă.
+   */
+  .public-gallery-overlay {
+    opacity: 1;
+  }
+}
+
+/* LIGHTBOX */
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  background: rgba(5, 20, 35, 0.92);
+
+  cursor: zoom-out;
+}
+
+.lightbox-content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  max-width: 1100px;
+  max-height: 90vh;
+
+  cursor: default;
+}
+
+.lightbox-content img {
+  display: block;
+
+  max-width: 100%;
+  max-height: 75vh;
+
+  object-fit: contain;
+
+  border-radius: 14px;
+}
+
+.lightbox-info {
+  padding-top: 15px;
+
+  color: white;
+}
+
+.lightbox-info h2 {
+  margin: 0 0 5px;
+
+  font-size: 18px;
+}
+
+.lightbox-info time {
+  font-size: 13px;
+
+  opacity: 0.7;
+}
+
+
+/* CLOSE BUTTON */
+
+.lightbox-close {
+  position: fixed;
+
+  top: 25px;
+  right: 30px;
+
+  width: 45px;
+  height: 45px;
+
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+
+  font-size: 30px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+
+@media (max-width: 600px) {
+  .gallery-lightbox {
+    padding: 20px;
+  }
+
+  .lightbox-content img {
+    max-height: 70vh;
+  }
+
+  .lightbox-close {
+    top: 15px;
+    right: 15px;
+  }
+}

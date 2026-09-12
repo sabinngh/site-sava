@@ -1,0 +1,311 @@
+/* =========================
+   TEAM PAGE
+========================= */
+
+.team-page {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.team-hero {
+  padding: 90px 24px 80px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(250, 204, 21, 0.12),
+      transparent 25%
+    ),
+    linear-gradient(135deg, #ffffff 0%, #eaf6ff 100%);
+}
+
+.team-hero > span {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.team-hero h1 {
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  color: #0f2a44;
+
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.team-hero h1 strong {
+  color: #2563eb;
+}
+
+.team-hero > p {
+  max-width: 620px;
+
+  margin: 24px auto 0;
+
+  color: #64748b;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   MEMBERS
+========================= */
+
+.team-members {
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 90px 24px 120px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+
+/* =========================
+   MEMBER CARD
+========================= */
+
+.member-card {
+  overflow: hidden;
+
+  background-color: #ffffff;
+
+  border: 1px solid #e6edf5;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(15, 42, 68, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #c7dbff;
+
+  box-shadow: 0 20px 45px rgba(15, 42, 68, 0.12);
+}
+
+
+/* MEMBER IMAGE */
+
+.member-card > img {
+  display: block;
+
+  width: 100%;
+  height: 330px;
+
+  object-fit: cover;
+
+  background-color: #eaf6ff;
+}
+
+
+/* MEMBER INFORMATION */
+
+.member-info {
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 300px;
+}
+
+.member-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 18px;
+
+  border-top: 1px solid #e6edf5;
+}
+
+.member-info > span {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #2563eb;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.member-info h2 {
+  margin: 0 0 12px;
+
+  color: #0f2a44;
+
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.member-info p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   EMPTY TEAM
+========================= */
+
+.team-members > p {
+  padding: 60px 30px;
+
+  color: #64748b;
+  background-color: #f6faff;
+
+  border: 1px dashed #cbd5e1;
+  border-radius: 18px;
+
+  text-align: center;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .team-hero {
+    padding: 65px 18px 60px;
+  }
+
+  .team-hero h1 {
+    font-size: 42px;
+  }
+
+  .team-hero > p {
+    font-size: 16px;
+  }
+
+  .team-members {
+    padding: 65px 18px 90px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .member-card > img {
+    height: 380px;
+  }
+}
+
+.member-image-placeholder {
+  width: 100%;
+  height: 330px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eaf6ff,
+      #dbeafe
+    );
+}
+
+.member-image-placeholder span {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background-color: #2563eb;
+
+  border-radius: 50%;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.member-description {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  /* Maximum 4 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.member-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  margin-top: 20px;
+  padding-top: 18px;
+
+  border-top: 1px solid #e6edf5;
+}
+
+.member-contact a {
+  color: #64748b;
+
+  font-size: 13px;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.member-contact a:hover {
+  color: #2563eb;
+}
