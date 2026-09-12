@@ -13,9 +13,7 @@ def create_app():
     CORS(
         app,
         supports_credentials=True,
-        origins=[
-            app.config["FRONTEND_URL"]
-        ]
+        origins=[app.config["FRONTEND_URL"]]
     )
 
     db.init_app(app)
