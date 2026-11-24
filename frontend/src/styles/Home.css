@@ -1,73 +1,271 @@
+/* =========================
+   HERO
+========================= */
+
 .hero {
   min-height: 720px;
-  background:
-    radial-gradient(
-      circle at 85% 20%,
-      rgba(250, 204, 21, 0.15),
-      transparent 22%
-    ),
-    linear-gradient(135deg, #ffffff 0%, #eaf6ff 100%);
-
+  position: relative;
   display: flex;
   align-items: center;
   overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(250, 204, 21, 0.16) 0%,
+      rgba(250, 204, 21, 0) 23%
+    ),
+    radial-gradient(
+      circle at 76% 78%,
+      rgba(37, 99, 235, 0.14) 0%,
+      rgba(37, 99, 235, 0) 34%
+    ),
+    linear-gradient(
+      120deg,
+      #fbfdff 0%,
+      #f4faff 32%,
+      #eaf6ff 65%,
+      #dcefff 100%
+    );
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+
+  background-image:
+    radial-gradient(
+      rgba(15, 42, 68, 0.09) 0.6px,
+      transparent 0.6px
+    );
+
+  background-size: 7px 7px;
 }
 
 .hero-container {
+  position: relative;
+  z-index: 1;
+
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
+
   margin: 0 auto;
-  padding: 50px 24px 70px;
+  padding: 55px 40px 65px;
 
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 0.9fr 1.1fr;
   align-items: center;
-  gap: 80px;
+  gap: 35px;
 }
 
-/* LEFT SIDE */
+
+/* =========================
+   HERO LEFT
+========================= */
 
 .hero-content {
+  position: relative;
+  z-index: 5;
+
   max-width: 650px;
 }
 
 .hero-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 
-  background-color: #fff7cc;
-  color: #755b00;
+  margin-bottom: 20px;
+  padding: 9px 16px;
 
-  padding: 8px 14px;
   border-radius: 999px;
 
-  font-size: 14px;
-  font-weight: 600;
+  background: linear-gradient(
+    135deg,
+    #fff8cf,
+    #ffefaa
+  );
 
-  margin-bottom: 24px;
+  color: #755b00;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow: 0 8px 25px rgba(161, 122, 0, 0.06);
 }
 
-.hero h1 {
+.hero-title {
   margin: 0;
 
   color: #0f2a44;
 
-  font-size: clamp(48px, 6vw, 76px);
-  line-height: 1.05;
-  letter-spacing: -3px;
+  font-size: clamp(52px, 5.3vw, 78px);
+  font-weight: 800;
+
+  line-height: 0.98;
+  letter-spacing: -4px;
 }
 
-.hero h1 span {
-  color: #2563eb;
+
+/* =========================
+   COLLAGE "MAI BUN"
+========================= */
+
+.collage-title {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  user-select: none;
 }
+
+.collage-word {
+  display: flex;
+  align-items: center;
+}
+
+.collage-letter {
+  width: 74px;
+  height: 82px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  margin-right: -2px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1;
+
+  box-shadow: 0 7px 15px rgba(15, 42, 68, 0.08);
+
+  clip-path: polygon(
+    4% 5%,
+    96% 0%,
+    100% 91%,
+    91% 98%,
+    5% 94%,
+    0% 11%
+  );
+}
+
+.letter-m {
+  z-index: 3;
+
+  color: #ffffff;
+  background: #2456b8;
+
+  transform: rotate(-5deg);
+}
+
+.letter-a {
+  z-index: 4;
+
+  color: #0f2a44;
+  background: #f8f6ee;
+
+  transform: rotate(3deg) translateY(-2px);
+}
+
+.letter-i {
+  width: 58px;
+
+  color: #2563eb;
+  background: #cfe8f7;
+
+  transform: rotate(2deg) translateY(2px);
+}
+
+.letter-b {
+  z-index: 4;
+
+  color: #d9a928;
+  background: #173f87;
+
+  transform: rotate(-5deg);
+}
+
+.letter-u {
+  z-index: 5;
+
+  color: #ffffff;
+  background: #f5f3e9;
+
+  text-shadow:
+    -2px -2px 0 #0f2a44,
+    2px -2px 0 #0f2a44,
+    -2px 2px 0 #0f2a44,
+    2px 2px 0 #0f2a44;
+
+  transform: rotate(2deg) translateY(-3px);
+}
+
+.letter-n {
+  color: #ffffff;
+  background: #9dbde2;
+
+  transform: rotate(5deg);
+}
+
+.collage-period {
+  display: inline-block;
+
+  margin-left: 8px;
+
+  color: #2563eb;
+
+  font-size: 78px;
+  font-weight: 900;
+
+  line-height: 0.5;
+
+  transform: translateY(8px);
+}
+
+.collage-title::after {
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+  height: 11px;
+
+  left: 255px;
+  bottom: -8px;
+
+  border-top: 5px solid #2563eb;
+  border-radius: 50%;
+
+  transform: rotate(-4deg);
+}
+
+
+/* =========================
+   DESCRIPTION + BUTTONS
+========================= */
 
 .hero-description {
   max-width: 600px;
 
-  margin: 28px 0 0;
+  margin: 0;
 
   color: #64748b;
-  font-size: 18px;
-  line-height: 1.7;
+
+  font-size: 17px;
+  line-height: 1.75;
 }
 
 .hero-actions {
@@ -75,12 +273,19 @@
   align-items: center;
   gap: 16px;
 
-  margin-top: 36px;
+  margin-top: 30px;
 }
 
 .primary-button,
 .secondary-button {
-  padding: 14px 22px;
+  min-height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 22px;
+
   border-radius: 11px;
 
   font-size: 15px;
@@ -89,144 +294,174 @@
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .primary-button {
-  background-color: #2563eb;
-  color: white;
+  color: #ffffff;
+  background: #2563eb;
 
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 9px 25px rgba(37, 99, 235, 0.22);
 }
 
 .primary-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.3);
+
+  background: #1d4ed8;
+
+  box-shadow: 0 13px 32px rgba(37, 99, 235, 0.3);
 }
 
 .secondary-button {
+  gap: 10px;
+
   color: #0f2a44;
+
+  background: rgba(255, 255, 255, 0.45);
+
   border: 1px solid #cbd5e1;
 
-  display: flex;
-  gap: 10px;
-  align-items: center;
+  backdrop-filter: blur(8px);
 }
 
 .secondary-button:hover {
   transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.8);
 }
 
-/* RIGHT SIDE */
+
+/* =========================
+   HERO RIGHT / BOARD
+========================= */
 
 .hero-visual {
-  height: 480px;
+  min-width: 0;
+  height: 560px;
 
   position: relative;
 
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
-.hero-main-shape {
-  width: 330px;
-  height: 330px;
 
-  border-radius: 80px 80px 80px 25px;
+/* Forma albastra din spatele board-ului */
 
-  background: linear-gradient(135deg, #2563eb, #0f2a44);
+.hero-blue-shape {
+  position: absolute;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  z-index: 1;
 
-  color: white;
+  width: 78%;
+  height: 67%;
 
-  box-shadow: 0 30px 70px rgba(15, 42, 68, 0.2);
+  top: 12%;
+  left: 12%;
+
+  border-radius:
+    43% 35% 42% 34%
+    / 38% 42% 35% 44%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #3478f6 0%,
+      #2563eb 52%,
+      #1748aa 100%
+    );
+
+  box-shadow:
+    0 30px 65px rgba(37, 99, 235, 0.17);
 
   transform: rotate(-4deg);
 }
 
-.hero-main-shape span {
-  font-size: 80px;
-  font-weight: 800;
-  letter-spacing: -5px;
-}
+.hero-blue-shape::after {
+  content: "";
 
-.hero-main-shape p {
-  margin: 10px 0 0;
-
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-/* Floating cards */
-
-.hero-card {
   position: absolute;
-  z-index: 2;
 
-  top: 30px;
-  left: 0;
+  width: 75%;
+  height: 70%;
 
-  width: 240px;
+  right: -18%;
+  bottom: -18%;
 
-  display: flex;
-  align-items: center;
-  gap: 14px;
+  border-radius: 50%;
 
-  background-color: white;
+  background: rgba(112, 174, 255, 0.17);
 
-  padding: 16px;
+  filter: blur(45px);
 
-  border-radius: 16px;
-
-  box-shadow: 0 15px 40px rgba(15, 42, 68, 0.12);
+  z-index: -1;
 }
 
-.hero-card-bottom {
-  top: auto;
-  left: auto;
 
-  bottom: 30px;
-  right: 0;
+/* Poza board-ului */
+
+.hero-board {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 100%;
+  max-width: 690px;
+  height: auto;
+
+  left: 50%;
+  bottom: -5px;
+
+  object-fit: contain;
+
+  transform:
+    translateX(-50%)
+    rotate(0.4deg);
+
+  filter:
+    drop-shadow(5px 0 0 #ffffff)
+    drop-shadow(-5px 0 0 #ffffff)
+    drop-shadow(0 5px 0 #ffffff)
+    drop-shadow(0 -5px 0 #ffffff)
+    drop-shadow(0 22px 24px rgba(15, 42, 68, 0.18));
 }
 
-.hero-card-icon {
-  min-width: 44px;
-  height: 44px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  background-color: #eaf6ff;
-  border-radius: 12px;
+/* =========================
+   TABLET
+========================= */
 
-  font-size: 21px;
+@media (max-width: 1100px) {
+  .hero-container {
+    gap: 15px;
+
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .collage-letter {
+    width: 62px;
+    height: 70px;
+
+    font-size: 54px;
+  }
+
+  .letter-i {
+    width: 48px;
+  }
+
+  .hero-board {
+    width: 100%;
+  }
 }
 
-.hero-card-icon.yellow {
-  background-color: #fff7cc;
-}
 
-.hero-card strong {
-  color: #0f2a44;
-  font-size: 14px;
-}
-
-.hero-card p {
-  color: #64748b;
-
-  margin: 4px 0 0;
-
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-/* RESPONSIVE */
+/* =========================
+   MOBILE / TABLET
+========================= */
 
 @media (max-width: 900px) {
   .hero {
@@ -235,15 +470,31 @@
 
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+
+    gap: 35px;
 
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
   }
 
   .hero-content {
-    text-align: center;
+    max-width: 700px;
+
     margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(52px, 10vw, 72px);
+  }
+
+  .collage-title {
+    justify-content: center;
+  }
+
+  .collage-title::after {
+    display: none;
   }
 
   .hero-description {
@@ -256,56 +507,126 @@
   }
 
   .hero-visual {
-    max-width: 500px;
     width: 100%;
+    max-width: 720px;
+    height: 520px;
+
     margin: 0 auto;
+  }
+
+  .hero-blue-shape {
+    width: 76%;
+    height: 65%;
+
+    left: 12%;
+    top: 13%;
+  }
+
+  .hero-board {
+    width: 92%;
+    max-width: 650px;
+
+    bottom: 0;
+  }
+
+  .hero-doodle-blue,
+  .hero-arrow {
+    display: none;
   }
 }
 
+
+/* =========================
+   PHONE
+========================= */
+
 @media (max-width: 550px) {
   .hero-container {
-    padding: 45px 18px;
+    padding: 45px 18px 15px;
   }
 
-  .hero h1 {
-    font-size: 46px;
-    letter-spacing: -2px;
+  .hero-title {
+    font-size: 48px;
+
+    line-height: 1;
+    letter-spacing: -2.5px;
+  }
+
+  .hero-badge {
+    margin-bottom: 18px;
+
+    font-size: 13px;
+  }
+
+  .collage-title {
+    gap: 10px;
+
+    margin-top: 18px;
+    margin-bottom: 26px;
+  }
+
+  .collage-letter {
+    width: 48px;
+    height: 56px;
+
+    font-size: 43px;
+  }
+
+  .letter-i {
+    width: 38px;
+  }
+
+  .collage-period {
+    margin-left: 3px;
+
+    font-size: 56px;
   }
 
   .hero-description {
     font-size: 16px;
+    line-height: 1.65;
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+
+    margin-top: 26px;
   }
 
   .primary-button,
   .secondary-button {
-    justify-content: center;
+    width: 100%;
+
     text-align: center;
   }
 
   .hero-visual {
-    height: 390px;
+    height: 370px;
   }
 
-  .hero-main-shape {
-    width: 260px;
-    height: 260px;
-    border-radius: 60px 60px 60px 20px;
+  .hero-blue-shape {
+    width: 90%;
+    height: 63%;
+
+    left: 5%;
+    top: 17%;
   }
 
-  .hero-main-shape span {
-    font-size: 62px;
+  .hero-board {
+    width: 105%;
+    max-width: 470px;
+
+    bottom: 0;
   }
 
-  .hero-card {
-    width: 200px;
+  .hero-doodle-yellow {
+    top: 30px;
+    right: -5px;
+
+    transform: scale(0.7);
   }
 }
-
 
 /* =========================
    ABOUT
